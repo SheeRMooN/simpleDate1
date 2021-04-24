@@ -24,8 +24,8 @@ public class People {
 //    private Date date;
 
 
-//    @Column(name = "LocalDate", columnDefinition = "DATE")
-//    @JsonFormat(pattern = "yyyy-MM-dd")   //  "localTime": [10,10,10]
+    @Column(name = "LocalDate", columnDefinition = "DATE")
+    @JsonFormat(pattern = "yyyy-MM-dd")   //  "localTime": [10,10,10]
     private LocalDate localDate;
 //    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") //  "localDateTime": "2012-12-17 12:12:17"
 //    @Column(name = "localDateTime", columnDefinition = "TIMESTAMP")
