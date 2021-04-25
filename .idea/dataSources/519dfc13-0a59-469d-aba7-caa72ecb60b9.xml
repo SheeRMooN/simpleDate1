@@ -810,8 +810,8 @@ false Zulu
     <database id="6" parent="1" name="simple_data_test">
       <ObjectId>16602</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>797</IntrospectionStateNumber>
-      <Relations>sequence|table|16636|16638|1
+      <IntrospectionStateNumber>847</IntrospectionStateNumber>
+      <Relations>sequence|table|16664|16666|1
 </Relations>
     </database>
     <database id="7" parent="1" name="simple_enum">
@@ -890,7 +890,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>798</IntrospectionStateNumber>
+      <IntrospectionStateNumber>848</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="22" parent="6" name="plpgsql">
@@ -61653,15 +61653,15 @@ r/10
       <DefaultClass>1</DefaultClass>
     </operator-class>
     <sequence id="5143" parent="21" name="people_id_seq">
-      <ObjectId>16636</ObjectId>
+      <ObjectId>16664</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>772</StateNumber>
+      <StateNumber>839</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="5144" parent="21" name="people">
-      <ObjectId>16638</ObjectId>
+      <ObjectId>16666</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>772</StateNumber>
+      <StateNumber>839</StateNumber>
     </table>
     <check id="5145" parent="34" name="cardinal_number_domain_check">
       <ObjectId>13172</ObjectId>
@@ -109637,25 +109637,37 @@ umserver</ColNames>
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>772</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>20</TypeId>
       <IdentityKind>by-default</IdentityKind>
     </column>
     <column id="16106" parent="5144" name="local_date">
       <Position>2</Position>
       <DataType>date|0s</DataType>
-      <StateNumber>772</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="16107" parent="5144" name="name">
+    <column id="16107" parent="5144" name="local_date_time">
       <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>839</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="16108" parent="5144" name="local_time">
+      <Position>4</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>839</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="16109" parent="5144" name="name">
+      <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>772</StateNumber>
+      <StateNumber>839</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="16108" parent="5144" name="people_pkey">
-      <ObjectId>16641</ObjectId>
-      <StateNumber>772</StateNumber>
+    <index id="16110" parent="5144" name="people_pkey">
+      <ObjectId>16669</ObjectId>
+      <StateNumber>839</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -109663,9 +109675,9 @@ umserver</ColNames>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
-    <key id="16109" parent="5144" name="people_pkey">
-      <ObjectId>16642</ObjectId>
-      <StateNumber>772</StateNumber>
+    <key id="16111" parent="5144" name="people_pkey">
+      <ObjectId>16670</ObjectId>
+      <StateNumber>839</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>people_pkey</UnderlyingIndexName>

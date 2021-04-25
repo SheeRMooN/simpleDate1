@@ -19,22 +19,16 @@ public class People {
 
     private String name;
 
-//    @JsonFormat(pattern = "yyyy-MM-dd") //  "date": "2021-04-24"
-//    @Column(name = "date", columnDefinition = "DATE")
-//    private Date date;
-
-
+    @JsonFormat(pattern = "yyyy-MM-dd")   //  "localDate": "2021-04-24"
     @Column(name = "LocalDate", columnDefinition = "DATE")
-    @JsonFormat(pattern = "yyyy-MM-dd")   //  "localTime": [10,10,10]
     private LocalDate localDate;
-//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") //  "localDateTime": "2012-12-17 12:12:17"
-//    @Column(name = "localDateTime", columnDefinition = "TIMESTAMP")
-//    private LocalDateTime localDateTime;
 
-//    {
-//        "date": "2021-04-24",
-//        "localDateTime": "2012-12-17 12:12:17",
-//         "localTime": [10,10,10],
-//        "name": "string"
-//    }
+    @JsonFormat(pattern = "HH:mm:ss") //  "localTime": [10,10,10]
+    @Column(name = "localTime", columnDefinition = "TIME")
+    private LocalTime localTime ;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss") //  "localDateTime": "2012-12-17 12:12:17"
+    @Column(name = "localDateTime", columnDefinition = "TIMESTAMP")
+    private LocalDateTime localDateTime;
+
 }
