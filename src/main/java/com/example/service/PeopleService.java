@@ -5,13 +5,17 @@ import com.example.model.OperationWithPeople;
 import com.example.model.People;
 import com.example.repository.PeopleRepo;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+
 
 @Service
 @AllArgsConstructor
@@ -155,4 +159,9 @@ public class PeopleService {
         people.setLocalDateTime(date);
         return repo.save(people);
     }
+
+    public Page<People> findPeopleByName(String name, Pageable pageable) {
+        return repo.findPeopleByName(name,pageable);
+    }
+
 }

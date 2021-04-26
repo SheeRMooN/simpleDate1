@@ -1,6 +1,8 @@
 package com.example.repository;
 
 import com.example.model.People;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface PeopleRepo extends JpaRepository<People, Long> {
+public interface PeopleRepo extends JpaRepository<People, Long>  {
     @Override
     Optional<People> findById(Long id);
 
@@ -19,4 +21,6 @@ public interface PeopleRepo extends JpaRepository<People, Long> {
     List<People> findPeopleByLocalDateAfter(LocalDate after);
     List<People> findPeopleByLocalDateBefore(LocalDate before);
     List<People> findPeopleByLocalDateBetween(LocalDate after, LocalDate before);
+    Page<People> findPeopleByName(String name, Pageable pageable);
+    List<People> findAllBy(Pageable pageable);
 }

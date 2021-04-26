@@ -5,10 +5,14 @@ import com.example.model.OperationWithPeople;
 import com.example.model.People;
 import com.example.service.PeopleService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -63,8 +67,15 @@ public class DateTimeController {
     public People updateLocalDate(@RequestBody LocalDate localDate, @PathVariable Long id){
         return service.updateLocalDate(localDate,id);
     }
-    @PutMapping("/local_date_time/{id}")
-    public People updateLocalDateTime(@RequestBody LocalDateTime localDateTime, @PathVariable Long id){
-        return service.updateLocalDateTime(localDateTime,id);
+
+    @GetMapping("/name/{name}")
+    public List<People> getActorByName(@PathVariable String name,
+                                       @RequestParam(name = "size", required = false, defaultValue = "1") int pageSize,
+                                       @RequestParam(name = "page", required = false, defaultValue = "5") int pageNumber){
+
+        Sort sort = Sort.by(Sort.Direction.ASC, "name");
+        Pageable pageable= PageRequest.of(pageSize, pageNumber, sort);
+        Page<People> people = service.findPeopleByName(name, pageable);
+        return people.getContent();
     }
 }
